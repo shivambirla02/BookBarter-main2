@@ -5,7 +5,7 @@ window.onload = () =>{
 }
 async function exchanges() {
     try{
-        const resp = await fetch(`http://localhost:8000/home/getSuccessfulTransaction`, {
+        const resp = await fetch(`https://bookbarter-main2.onrender.com/getSuccessfulTransaction`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -26,7 +26,7 @@ async function exchanges() {
 
 async function topLenders() {
     try {
-        const response = await fetch('http://localhost:8000/home/getTopLenders'); 
+        const response = await fetch('https://bookbarter-main2.onrender.com/home/getTopLenders'); 
         const topLenders = await response.json();
         console.log(topLenders)
 
@@ -54,7 +54,7 @@ async function topLenders() {
 
 async function topBooks() {
     try {
-        const response = await fetch('http://localhost:8000/home/getBooksMaxRequest'); 
+        const response = await fetch('https://bookbarter-main2.onrender.com/home/getBooksMaxRequest'); 
         const books = await response.json();
 
         if (response.ok && Array.isArray(books)) {
