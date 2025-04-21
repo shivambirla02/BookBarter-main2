@@ -11,7 +11,7 @@ window.onload = function () {
     console.log(user);
     console.log(token);
     if(user){
-         fetch(`http://localhost:8000/user/getUserDetails/${user}`, {
+         fetch(`https://bookbarter-main2.onrender.com/user/getUserDetails/${user}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -66,7 +66,7 @@ function displayUserDetails(user) {
     `;
     userdetails.appendChild(userInfo);
 
-    fetch(`http://localhost:8000/booklisting/getBookbyUserid/${user.id}`, {
+    fetch(`https://bookbarter-main2.onrender.com/booklisting/getBookbyUserid/${user.id}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -83,7 +83,7 @@ function displayUserDetails(user) {
 async function populateBookDropdown() {
     const bookSelect = document.getElementById("bookSelect");
     
-    const response = await fetch("http://localhost:8000/search/all", {
+    const response = await fetch("https://bookbarter-main2.onrender.com/search/all", {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -140,7 +140,7 @@ async function createNewListing() {
         return;
     }
 
-    fetch("http://localhost:8000/booklisting/createListing", {
+    fetch("https://bookbarter-main2.onrender.com/booklisting/createListing", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -173,7 +173,7 @@ function handleStatusChange(bookId, newStatus, userId) {
     // Update the global state or perform other actions here
     //console.log(`Status for book ${bookId} changed to ${newStatus}`);
     listingStatus[bookId] = newStatus;
-        fetch(`http://localhost:8000/booklisting/updateBookStatus`, {
+        fetch(`https://bookbarter-main2.onrender.com/booklisting/updateBookStatus`, {
                 method: "PUT",
                 // body: JSON.stringify({ userId: userId }),
                 headers: {
