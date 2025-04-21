@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function fetchRequestDataAdmin() {
     var token = sessionStorage.getItem('token');
     console.log(token);
-    fetch('http://localhost:8000/user/getRequestDetailsforAdmin', {
+    fetch('https://bookbarter-main2.onrender.com/user/getRequestDetailsforAdmin', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ function renderUserData(data) {
 function fetchUserDataAdmin() {
     var token = sessionStorage.getItem('token');
     console.log(token);
-    fetch('http://localhost:8000/user/getUserDetailsforAdmin', {
+    fetch('https://bookbarter-main2.onrender.com/user/getUserDetailsforAdmin', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ function fetchUserDataAdmin() {
 
 function deleteUser(userId) {
     var token = sessionStorage.getItem('token');
-    fetch('http://localhost:8000/user/deleteUserByAdmin', {
+    fetch('https://bookbarter-main2.onrender.com/user/deleteUserByAdmin', {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
