@@ -6,7 +6,7 @@ window.onload = function () {
     userId = 2;
 
     if (userId) {
-        fetch(`http://localhost:8000/user/getFirstname/${userId}`, {
+        fetch(`https://bookbarter-main2.onrender.com/user/getFirstname/${userId}`, {
             method: "GET",
             // body: JSON.stringify({ userId: userId }),
             headers: {
@@ -23,7 +23,7 @@ window.onload = function () {
     }
 
     if (userId) {
-        fetch(`http://localhost:8000/booklisting/getBookbyUserid/${userId}`, {
+        fetch(`https://bookbarter-main2.onrender.com/booklisting/getBookbyUserid/${userId}`, {
             method: "GET",
             // body: JSON.stringify({ userId: userId }),
             headers: {
@@ -68,7 +68,7 @@ function submitListing(event) {
     //const newStatus = currentStatus === 'Available' ? 'NotAvailable' : 'available';
     console.log(currentStatus);
     if (currentStatus === "available") {
-        fetch(`http://localhost:8000/booklisting/updateAvailableBooks`, {
+        fetch(`https://bookbarter-main2.onrender.com/booklisting/updateAvailableBooks`, {
             method: "PUT",
             // body: JSON.stringify({ userId: userId }),
             headers: {
@@ -88,7 +88,7 @@ function submitListing(event) {
             })
             .catch(console.error);
     } else {
-        fetch(`http://localhost:8000/booklisting/updateNotAvailableBooks`, {
+        fetch(`https://bookbarter-main2.onrender.com/booklisting/updateNotAvailableBooks`, {
             method: "PUT",
             // body: JSON.stringify({ userId: userId }),
             headers: {
