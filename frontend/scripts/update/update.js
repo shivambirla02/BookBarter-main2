@@ -48,7 +48,7 @@ function logout() {
 
 async function getUser() {
     try {
-        const data = await fetch("http://localhost:8000/user/getUpdateDetails", {
+        const data = await fetch("https://bookbarter-main2.onrender.com/user/getUpdateDetails", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
@@ -96,7 +96,7 @@ function initializeAutocomplete() {
 
 async function getUser() {
     try {
-        const data = await fetch("http://localhost:8000/user/getUpdateDetails", {
+        const data = await fetch("https://bookbarter-main2.onrender.com/user/getUpdateDetails", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -155,7 +155,7 @@ function updateUser() {
         return;
     }
 
-    fetch('http://localhost:8000/user/update', {
+    fetch('https://bookbarter-main2.onrender.com/user/update', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
