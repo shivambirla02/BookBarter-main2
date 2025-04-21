@@ -96,7 +96,7 @@ function fetchAllBooks(page) {
         fetchFilteredBooks(query, page);
     } else {
         // Original fetch URL
-        fetch(`http://localhost:8000/search/all?page=${page}&limit=${limit}`, {
+        fetch(`https://bookbarter-main2.onrender.com/search/all?page=${page}&limit=${limit}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -110,7 +110,7 @@ function fetchAllBooks(page) {
 }
 
 function fetchFilteredBooks(keyword, page) {
-    fetch(`http://localhost:8000/search/query?keywords=${keyword}&page=${page}&limit=${limit}`, {
+    fetch(`https://bookbarter-main2.onrender.com/search/query?keywords=${keyword}&page=${page}&limit=${limit}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -198,7 +198,7 @@ function deleteProfile() {
         if (isConfirmed) {
             var token = sessionStorage.getItem('token');
             console.log(token);
-            fetch('http://localhost:8000/user/deleteUser', {
+            fetch('https://bookbarter-main2.onrender.com/user/deleteUser', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
