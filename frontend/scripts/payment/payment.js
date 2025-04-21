@@ -15,7 +15,7 @@ function handlePaymentApprove(requestId) {
 
 function getUserCards(requestId) {
     fetch(
-        `http://localhost:8000/requests/getBorrowerIdFromRequestId/${requestId}`,
+        `https://bookbarter-main2.onrender.com/requests/getBorrowerIdFromRequestId/${requestId}`,
         {
             method: "GET",
             headers: {
@@ -28,7 +28,7 @@ function getUserCards(requestId) {
         .then((data) => {
             if (data["status"] === "Success") {
                 fetch(
-                    `http://localhost:8000/payment/getCards/${data["borrowerId"]}`,
+                    `https://bookbarter-main2.onrender.com/payment/getCards/${data["borrowerId"]}`,
                     {
                         method: "GET",
                         headers: {
@@ -146,7 +146,7 @@ async function handleCardSubmission(stripe, elements) {
 
 async function saveCardDetails(email, paymentMethodId, userId) {
     try {
-        const response = await fetch("http://localhost:8000/payment/card/add", {
+        const response = await fetch("https://bookbarter-main2.onrender.com/payment/card/add", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -200,7 +200,7 @@ async function handlePayment(event) {
     try {
         const requestId = document.getElementById("requestId").value;
 
-        const response = await fetch("http://localhost:8000/payment/pay", {
+        const response = await fetch("https://bookbarter-main2.onrender.com/payment/pay", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
