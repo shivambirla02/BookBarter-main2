@@ -6,7 +6,7 @@ window.onload = function () {
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get("id");
     if (bookId) {
-        fetch(`http://localhost:8000/book/get/${bookId}`, {
+        fetch(`https://bookbarter-main2.onrender.com/book/get/${bookId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -83,7 +83,7 @@ function displayBookDetails(bookDetails) {
 
 function raiseRequest(userId, listingId, bookId) {
     console.log(userId,listingId,bookId)
-    const url = "http://localhost:8000/requests/raiseBorrowRequest";
+    const url = "https://bookbarter-main2.onrender.com/requests/raiseBorrowRequest";
     const data = {
         borrowDuration: "5",
         listingId: listingId,
@@ -107,7 +107,7 @@ function raiseRequest(userId, listingId, bookId) {
         .then((jsonResponse) => {
             console.log("Request creation success:", jsonResponse);
 
-            fetch(`http://localhost:8000/booklisting/updateBookStatus`, {
+            fetch(`https://bookbarter-main2.onrender.com/booklisting/updateBookStatus`, {
                 method: "PUT",
                 // body: JSON.stringify({ userId: userId }),
                 headers: {
