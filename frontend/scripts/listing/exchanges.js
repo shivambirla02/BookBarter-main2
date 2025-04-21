@@ -7,7 +7,7 @@ window.onload = () =>{
 
 async function renderRequests(){
     try{
-        const resp = await fetch(`http://localhost:8000/booklisting/getRequestDetailsforUser`,  {
+        const resp = await fetch(`https://bookbarter-main2.onrender.com/booklisting/getRequestDetailsforUser`,  {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
