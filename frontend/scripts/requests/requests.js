@@ -2,7 +2,7 @@ let currentActions = {}; // Object to track the current state of actions
 let token = null;
 
 function fetchPendingActions() {
-    fetch(`http://localhost:8000/requests/getPendingActions`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/getPendingActions`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -15,7 +15,7 @@ function fetchPendingActions() {
 }
 
 function invalidateOldRequests() {
-    fetch(`http://localhost:8000/requests/invalidateOldRequests`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/invalidateOldRequests`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json",
@@ -210,7 +210,7 @@ async function updatePendingActions(newActions) {
 // Rest of your functions...
 
 async function getUserNameFromIdAPI(userId) {
-    const apiUrl = `http://localhost:8000/user/getUserName/${userId}`;
+    const apiUrl = `https://bookbarter-main2.onrender.com/user/getUserName/${userId}`;
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -227,7 +227,7 @@ async function getUserNameFromIdAPI(userId) {
 }
 
 async function getBookNameFromListingIdAPI(listingId) {
-    const apiUrl = `http://localhost:8000/booklisting/getBookName/${listingId}`;
+    const apiUrl = `https://bookbarter-main2.onrender.com/booklisting/getBookName/${listingId}`;
     try {
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -268,7 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleShipmentReceive(requestId) {
-    fetch(`http://localhost:8000/requests/handleShipmentReceive`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/handleShipmentReceive`, {
         method: "PUT",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
@@ -289,7 +289,7 @@ function handleShipmentReceive(requestId) {
 }
 
 function handleShipBook(requestId) {
-    fetch(`http://localhost:8000/requests/handleShipBook`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/handleShipBook`, {
         method: "PUT",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
@@ -310,7 +310,7 @@ function handleShipBook(requestId) {
 }
 
 function handleRequestClose(requestId) {
-    fetch(`http://localhost:8000/requests/closeRequest`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/closeRequest`, {
         method: "DELETE",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
@@ -330,7 +330,7 @@ function handleRequestClose(requestId) {
 }
 
 function handleApprove(requestId) {
-    fetch(`http://localhost:8000/requests/approveRequest`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/approveRequest`, {
         method: "PUT",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
@@ -351,7 +351,7 @@ function handleApprove(requestId) {
 }
 
 function handleReject(requestId) {
-    fetch(`http://localhost:8000/requests/rejectRequest`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/rejectRequest`, {
         method: "PUT",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
@@ -372,7 +372,7 @@ function handleReject(requestId) {
 }
 
 function handlePaymentDecline(requestId) {
-    fetch(`http://localhost:8000/requests/declinePayment`, {
+    fetch(`https://bookbarter-main2.onrender.com/requests/declinePayment`, {
         method: "PUT",
         body: JSON.stringify({ requestId: requestId }),
         headers: {
