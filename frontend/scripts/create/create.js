@@ -66,7 +66,7 @@ async function createUser() {
             throw new Error("Invalid email address.");
         }
 
-        fetch("http://localhost:8000/user/create", {
+        fetch("https://bookbarter-main2.onrender.com/user/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
