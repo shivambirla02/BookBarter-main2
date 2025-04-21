@@ -27,24 +27,24 @@ function trimLongText(text, len_) {
 }
 
 function fetchBestBooks(keyword, page, limit) {
-    fetch(`http://localhost:8000/search/query?keywords=${keyword}&page=${page}&limit=${limit}`)
+    fetch(`https://bookbarter-main2.onrender.com/search/query?keywords=${keyword}&page=${page}&limit=${limit}`)
         .then((response) => response.json())
         .then((data) => displaySpecialBooks(data, document.getElementById("results")))
         .catch(console.error);
 }
 
 function fetchCelebrityBooks(keyword1, keyword2, keyword3, page, limit) {
-    fetch(`http://localhost:8000/search/query?keywords=${keyword1}&page=${page}&limit=${limit}`)
+    fetch(`https://bookbarter-main2.onrender.com/search/query?keywords=${keyword1}&page=${page}&limit=${limit}`)
         .then((response) => response.json())
         .then((data) => displaySpecialBooks(data, document.getElementById("results1")))
         .catch(console.error);
 
-    fetch(`http://localhost:8000/search/query?keywords=${keyword2}&page=${page}&limit=${limit}`)
+    fetch(`https://bookbarter-main2.onrender.com/search/query?keywords=${keyword2}&page=${page}&limit=${limit}`)
         .then((response) => response.json())
         .then((data) => displaySpecialBooks(data, document.getElementById("results2")))
         .catch(console.error);
 
-    fetch(`http://localhost:8000/search/query?keywords=${keyword3}&page=${page}&limit=${limit}`)
+    fetch(`https://bookbarter-main2.onrender.com/search/query?keywords=${keyword3}&page=${page}&limit=${limit}`)
         .then((response) => response.json())
         .then((data) => displaySpecialBooks(data, document.getElementById("results3")))
         .catch(console.error);
