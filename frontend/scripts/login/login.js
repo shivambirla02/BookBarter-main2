@@ -15,7 +15,7 @@ function validateLogin() {
         password_hash: password,
     };
     console.log(userData);
-    fetch("http://localhost:8000/user/login", {
+    fetch("https://bookbarter-main2.onrender.com/user/login", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function validateLogin() {
                     document.getElementById("username").value
                 );
 
-                fetch("http://localhost:8000/user/getAdmin", {
+                fetch("https://bookbarter-main2.onrender.com/user/getAdmin", {
                     method: "GET",
                     headers: {
                     "Content-Type": "application/json",
