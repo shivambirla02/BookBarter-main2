@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../styles/requests/requests.css">
+</head>
+<body>
+
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <div class="navbar-title">
+                <img class="navbar-logo" src="../../assets/favicon.png"></img>
+                <div class="navbar-brand">Book Barter</div>
+            </div>
+
+            <div class="d-flex">
+                <button type="button" class="btn btn-primary" onclick="window.location.href='../../index.html'">Home</button>
+                <button type="button" class="btn btn-primary" onclick="window.location.href='./requests.html'">PendingActions</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="pending-actions" class="actions-container"></div>
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <!-- accept card details from user -->
+            <div id="add-card" hidden>
+                <h2>Add a Payment Method</h2>
+                <p>Please add card to proceed</p>
+                <div class="action-card">
+                    <h2>Enter your card details</h2>
+                    <input type="text" id="email" placeholder="Email Address" />
+                    <div id="card-element"></div>
+                    <button id="submit-button">Submit</button>
+                    <div id="error-message" style="color: red;"></div>
+                </div>
+            </div>
+
+            <!-- display fetched card details -->
+            <div id="confirm-payment" class="payment-confirmation" hidden>
+                <h2>Confirm Payment</h2>
+                <p>Please confirm your payment details below and click 'Pay Now' to complete your transaction.</p>
+                
+                <!-- Displaying card details -->
+                <div id="card-info">
+                    <p><strong>Card:</strong> <span id="card-last4"></span></p>
+                    <p><strong>Expires:</strong> <span id="card-expiry"></span></p>
+                </div>
+            
+                <!-- Payment Amount (Modify as per your need) -->
+                <div class="payment-amount">
+                    <label for="amount">Amount:</label>
+                    <input type="text" id="amount" name="amount" value="10.00" readonly> <!-- Change as needed -->
+                </div>
+            
+                <!-- Hidden Input for User and Request IDs -->
+                <input type="hidden" id="userId" name="userId">
+                <input type="hidden" id="requestId" name="requestId">
+                <input type="hidden" id="customerId" name="customerId">
+                <input type="hidden" id="paymentMethodId" name="paymentMethodId">
+                <input type="hidden" id="requestId" name="requestId">
+
+            
+                <!-- Error Message Display -->
+                <div id="payment-errors" style="color: red;"></div>
+
+                <!-- Payment Button -->
+                <button id="pay-now-button" class="btn">Pay Now</button>
+
+            </div>
+            <!-- Success Message Display -->
+            <div id="modal-messages"></div>
+            <!-- Okay Button -->
+            <button id="ok-button" class="btn" style="display:none;">Okay</button>
+            
+        </div>
+    </div>
+    <script src="../../scripts/requests/requests.js"></script>
+    <script src="../../scripts/payment/payment.js"></script>
+</body>
+</html>
